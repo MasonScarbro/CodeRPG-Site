@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from CodeRPGappMain.views import home
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name='home'),
     path('CodeRPGappMain/', include('django.contrib.auth.urls')),
     path('CodeRPGappMain/', include('CodeRPGappMain.urls')),
 
