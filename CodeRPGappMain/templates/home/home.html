@@ -12,6 +12,9 @@
     <a class="nav-link" href="{% url 'logout' %}">Logout</a> <!-- User can Logout, note: This is a handled Logout meaning I never made a view class or anything Django just makes a logout for you  -->
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'show_profile' %}">View Profile</a> <!-- Add this line for the profile view -->
+</li>
 
 
 {% else %}  <!-- If the user is logged out -->
@@ -30,4 +33,4 @@
 
 {% endblock %}
 
-<!-- NOT WORKING -->
+
