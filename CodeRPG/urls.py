@@ -24,5 +24,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('CodeRPGappMain/', include('django.contrib.auth.urls')),
     path('CodeRPGappMain/', include('CodeRPGappMain.urls')),
+    
 
 ]

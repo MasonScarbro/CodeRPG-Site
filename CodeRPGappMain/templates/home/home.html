@@ -2,22 +2,32 @@
 
 {% csrf_token %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
 
 <li class="nav-item">
-    <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
-</li>
-
-{% else %}
-
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'register' %}">Register</a>
+    <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a> <!-- User can Edit Profile -->
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="{% url 'login' %}">Login</a>
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a> <!-- User can Logout, note: This is a handled Logout meaning I never made a view class or anything Django just makes a logout for you  -->
 </li>
+
+
+
+{% else %}  <!-- If the user is logged out -->
+
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- url pointing to the register view -->
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- url pointing to the Login view -->
+</li>
+
+
 
 {% endif %}
 
 {% endblock %}
+
+<!-- NOT WORKING -->
