@@ -1,14 +1,37 @@
 {% block content %}
+{% load static %}
 
-<h1> Login </h1>
-<br/><br/>
+<link 
+rel="stylesheet"
+type="text/css"
+href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
+/>
 
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Login</button>
-    </form>    
+<style>
+    /* Vertically center content */
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Use the full viewport height */
+    }
+</style>
+
+
+<div class="container d-flex-center">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Login</h1>
+            <br/><br/>
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Login</button>
+                </form>    
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

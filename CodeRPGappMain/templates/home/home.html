@@ -1,34 +1,132 @@
 {% block content %}
-
+{% load static %}
 {% csrf_token %}
+<link 
+rel="stylesheet"
+type="text/css"
+href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
+/>
+
 
 {% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a> <!-- User can Edit Profile -->
-</li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Code-RPG</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a> <!-- User can Edit Profile -->
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a> <!-- User can Logout, note: This is a handled Logout meaning I never made a view class or anything Django just makes a logout for you  -->
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'show_profile' %}">View Profile</a> <!-- Add this line for the profile view -->
+        </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'logout' %}">Logout</a> <!-- User can Logout, note: This is a handled Logout meaning I never made a view class or anything Django just makes a logout for you  -->
-</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'game' %}">Games</a> <!-- url pointing to the Login view -->
+        </li>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'show_profile' %}">View Profile</a> <!-- Add this line for the profile view -->
-</li>
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
+    <div class="card" style="width: 40rem;">
+      <img src="/static/CodeRPGappMain/images/Code-RPG.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">What Is CodeRPG</h5>
+        <p class="card-text">Step into the captivating realm of CodeRPG, an innovative educational web application designed to transform learning into an exhilarating adventure. Imagine embarking on a journey where you not only acquire coding skills but also forge your own unique character, advancing through levels that are as addictively engaging as they are instructive.
 
+        At CodeRPG, we recognize the power of combining education with enjoyment. By seamlessly weaving together games and interactive experiences, we've crafted a digital sanctuary where the thrill of coding becomes an irresistible addiction. Unveil the secrets of programming through engaging challenges and interactive activities that turn learning into a captivating odyssey.
+
+        Our mission at CodeRPG is to cultivate a dynamic environment that mirrors the allure of a fantasy realm. As you navigate this virtual world fueled by imagination, you'll not only enhance your skills but also witness your progress unfold before you. Much like tracking your progress in a role-playing game, you'll be able to monitor your growth and accomplishments, creating a sense of achievement that fuels your desire to explore further.
+
+        In essence, CodeRPG is your portal to a realm where education and excitement intertwine. Embark on a quest to master coding while immersing yourself in a universe of endless possibilities, all designed to make learning a truly enchanting and rewarding endeavor.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    <!-- Grid container -->
+    <div class="container p-4"></div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://github.com/MasonScarbro/CodeRPG-Site">Mason Scarbro</a>
+      , Build: 0.0.1
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 {% else %}  <!-- If the user is logged out -->
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- url pointing to the register view -->
-</li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">RPG-Code</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- url pointing to the register view -->
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- url pointing to the Login view -->
+            </li>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- url pointing to the Login view -->
-</li>
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
+    <div class="card" style="width: 40rem;">
+      <img src="/static/CodeRPGappMain/images/Code-RPG.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">What Is CodeRPG</h5>
+        <p class="card-text">Step into the captivating realm of CodeRPG, an innovative educational web application designed to transform learning into an exhilarating adventure. Imagine embarking on a journey where you not only acquire coding skills but also forge your own unique character, advancing through levels that are as addictively engaging as they are instructive.
 
+        At CodeRPG, we recognize the power of combining education with enjoyment. By seamlessly weaving together games and interactive experiences, we've crafted a digital sanctuary where the thrill of coding becomes an irresistible addiction. Unveil the secrets of programming through engaging challenges and interactive activities that turn learning into a captivating odyssey.
 
+        Our mission at CodeRPG is to cultivate a dynamic environment that mirrors the allure of a fantasy realm. As you navigate this virtual world fueled by imagination, you'll not only enhance your skills but also witness your progress unfold before you. Much like tracking your progress in a role-playing game, you'll be able to monitor your growth and accomplishments, creating a sense of achievement that fuels your desire to explore further.
 
+        In essence, CodeRPG is your portal to a realm where education and excitement intertwine. Embark on a quest to master coding while immersing yourself in a universe of endless possibilities, all designed to make learning a truly enchanting and rewarding endeavor.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    <!-- Grid container -->
+    <div class="container p-4"></div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://github.com/MasonScarbro/CodeRPG-Site">Mason Scarbro</a>
+        , Build: 0.0.1
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
 {% endif %}
 
 {% endblock %}

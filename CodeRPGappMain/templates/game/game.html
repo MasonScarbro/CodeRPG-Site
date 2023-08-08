@@ -1,0 +1,26 @@
+{% block content %}
+{% load static %}
+{% csrf_token %}
+{% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
+<link href="/static/CodeRPGappMain/css/gameStyle.css" rel="stylesheet">
+<script defer src="{% static 'CodeRPGappMain/js/game.js' %}"></script>
+<div class="back-button-cont">
+    <a href="/" class="btn btn-primary">Back/Home</a>
+</div> 
+
+<div class="container">
+    <div id="text">Test</div>
+    <div id="option-buttons" class="btn-grid">
+        <button class="btn">Option 1</button>
+        <button class="btn">Option 1</button>
+        <button class="btn">Option 1</button>
+        <button class="btn">Option 1</button>
+    </div>
+
+</div>
+
+<div class="back-button-cont">
+    <a href="{% url 'show_profile' %}" class="btn btn-primary">Character</a>
+</div> 
+{% endif %}
+{% endblock %}

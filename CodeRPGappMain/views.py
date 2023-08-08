@@ -36,7 +36,14 @@ class UserRegisterView(generic.CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        Profile.objects.create(user=self.object)
+    
+    # Create a profile and link it to the user
+        profile = Profile.objects.create(user=self.object)
+    
+    # Save the RPG class to the profile
+        rpg_class = form.cleaned_data.get('rpg_class')
+        profile.rpg_class = rpg_class
+        profile.save()
         return response
 
 class UserEditView(generic.UpdateView):
@@ -44,15 +51,18 @@ class UserEditView(generic.UpdateView):
     template_name = 'registration/edit_profile.html'
     success_url = reverse_lazy('home')
 
-    """ def form_valid(self, form):
-        response = super().form_valid(form)
-        profile = self.request.user.profile
-        profile.rpg_class = form.cleaned_data.get('rpg_class')
-        profile.save()
-        return response """
 
     def get_object(self):
         return self.request.user
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        
+        # Update RPG class in the associated Profile
+        rpg_class = form.cleaned_data.get('rpg_class')
+        self.object.profile.rpg_class = rpg_class
+        self.object.profile.save()
+        return response
     
 
 class PasswordsChangeView(PasswordChangeView):
@@ -78,3 +88,6 @@ class ShowProfilePageView(generic.DetailView):
 
 def home(request):
     return render(request, 'home/home.html')
+
+def game(request):
+    return render(request, 'games/game.html')

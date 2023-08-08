@@ -1,8 +1,24 @@
 {% block content %}
+{% load static %}
 
-<h1>User Profile</h1>
-<h2> UserName: {{ page_user.user.username }}</h2>
-<h3>Hi, Im: {{ first_name }} {{ last_name }}</h3>
+<link 
+rel="stylesheet"
+type="text/css"
+href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
+/>
 
-
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card" style="width: 24rem;">
+        <div class="card-body text-center">
+            <h3 class="card-title mb-3">UserName: {{ page_user.user.username }}</h3>
+            {% if page_user.rpg_class %}
+            <h5 class="card-subtitle mb-2 text-muted">RPG Class: {{ page_user.rpg_class }}</h5>
+            {% endif %}
+            {% if page_user.level %}
+            <h6 class="card-subtitle mb-3 text-muted">Level: {{ page_user.level }}</h6>
+            {% endif %}
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

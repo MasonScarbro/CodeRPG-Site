@@ -1,17 +1,27 @@
 {% block content %}
+{% load static %}
 
-<h1> Edit Profile</h1>
-<br/><br/>
+<link 
+rel="stylesheet"
+type="text/css"
+href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
+/>
 
-{{ user.profile.bio}}
 
-<br/><br/>
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Update Profile</button>
-    </form>    
+<div class="container d-flex-center">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Edit Profile</h1>
+            <br/><br/>
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Update Profile</button>
+                </form>    
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

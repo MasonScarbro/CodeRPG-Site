@@ -2,10 +2,11 @@
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
-from .views import UserRegisterView, UserEditView, home, PasswordsChangeView, ShowProfilePageView
+from .views import UserRegisterView, UserEditView, home, PasswordsChangeView, ShowProfilePageView, game
 
 urlpatterns = [
     path('', home, name='home'),
+    path('game', game, name='game'),
     path('register/', UserRegisterView.as_view(), name='register'),
     path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
     path('profile/', ShowProfilePageView.as_view(), name='show_profile'), 
