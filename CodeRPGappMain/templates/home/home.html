@@ -10,7 +10,7 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
 
 {% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #020330;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Code-RPG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +41,9 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
     </div>
   </nav>
 
-  <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
-    <div class="card" style="width: 40rem;">
-      <img src="/static/CodeRPGappMain/images/Code-RPG.png" class="card-img-top" alt="...">
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px - 160px);">
+    <div class="card" style="width: 70rem;">
+      
       <div class="card-body">
         <h5 class="card-title">What Is CodeRPG</h5>
         <p class="card-text">Step into the captivating realm of CodeRPG, an innovative educational web application designed to transform learning into an exhilarating adventure. Imagine embarking on a journey where you not only acquire coding skills but also forge your own unique character, advancing through levels that are as addictively engaging as they are instructive.
@@ -54,10 +54,31 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
 
         In essence, CodeRPG is your portal to a realm where education and excitement intertwine. Embark on a quest to master coding while immersing yourself in a universe of endless possibilities, all designed to make learning a truly enchanting and rewarding endeavor.
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+
+      </div> 
+      <div class="card" style="width: 70rem;">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">About Contributing</h6>
+          <p class="card-text">Howdy, everyone! Mason Scarbro here, the ''mastermind'' pulling the strings behind CodeRPG. Just wanted to give you a sneak peek into the backstory  I whipped up this whole thing during the summer, and it managed to find its way into my junior year of college. Life's a balancing act, you know? Between lectures, projects, and, well, life being life, there's a lot on my plate.
+  
+            Now, I'm no coding prodigy who's been at this for ages. I took my first coding plunge only about a year and a half back. So, why am I sharing my coding journey with you? 'Cause this spot isn't just for the coding gurus; it's for learners like you and me, all marching towards coding excellence.
+            
+            This is where you come in, fellow coding enthusiasts. Those links hanging around up there? They're your gateway to the CodeRPG universe. And that pull request button? It's your VIP pass, your opportunity to add your unique touch.
+            
+            Now, I won't make grand promises, but here's the deal: More games and lessons? Absolutely! And here's the thing – it's all thanks to the open-source vibe of CodeRPG. You see, while I won't be directly collaborating with each and every one of you, the door's wide open for you to contribute your own games or lessons through pull requests.
+            
+             We're piecing together this place, bit by bit, crafting a collective masterpiece.
+            
+            So, let's embrace the endless horizons that CodeRPG brings. Think of it like a treasure map, and the treasure is knowledge – the kind that propels you forward in the coding realm. Our journey is just beginning, and let me tell you, it's gonna be quite the adventure. So if you've got that coding itch and want to be part of the journey, let's make this place even more awesome, one code snippet at a time.</p>
+          <a href="https://github.com/MasonScarbro/CodeRPG-Site" class="card-link">CodeRPG Repo</a>
+          
+        </div> 
+    </div>
     </div>
   </div>
+
+
 
   <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
     <!-- Grid container -->
@@ -68,50 +89,62 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2023 Copyright:
       <a class="text-white" href="https://github.com/MasonScarbro/CodeRPG-Site">Mason Scarbro</a>
-      , Build: 0.0.1
+      || Build: 0.0.1, 8/8/2023
     </div>
     <!-- Copyright -->
   </footer>
 
 {% else %}  <!-- If the user is logged out -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">RPG-Code</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- url pointing to the register view -->
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- url pointing to the Login view -->
-            </li>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
-    <div class="card" style="width: 40rem;">
-      <img src="/static/CodeRPGappMain/images/Code-RPG.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">What Is CodeRPG</h5>
-        <p class="card-text">Step into the captivating realm of CodeRPG, an innovative educational web application designed to transform learning into an exhilarating adventure. Imagine embarking on a journey where you not only acquire coding skills but also forge your own unique character, advancing through levels that are as addictively engaging as they are instructive.
-
-        At CodeRPG, we recognize the power of combining education with enjoyment. By seamlessly weaving together games and interactive experiences, we've crafted a digital sanctuary where the thrill of coding becomes an irresistible addiction. Unveil the secrets of programming through engaging challenges and interactive activities that turn learning into a captivating odyssey.
-
-        Our mission at CodeRPG is to cultivate a dynamic environment that mirrors the allure of a fantasy realm. As you navigate this virtual world fueled by imagination, you'll not only enhance your skills but also witness your progress unfold before you. Much like tracking your progress in a role-playing game, you'll be able to monitor your growth and accomplishments, creating a sense of achievement that fuels your desire to explore further.
-
-        In essence, CodeRPG is your portal to a realm where education and excitement intertwine. Embark on a quest to master coding while immersing yourself in a universe of endless possibilities, all designed to make learning a truly enchanting and rewarding endeavor.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #020330;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Code-RPG</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- User can Edit Profile -->
+      </li>
+      
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- User can Logout, note: This is a handled Logout meaning I never made a view class or anything Django just makes a logout for you  -->
+      </li>
+      </form>
     </div>
   </div>
+</nav>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px - 160px);">
+  <div class="card" style="width: 70rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">What Is CodeRPG</h5>
+      <p class="card-text">Step into the captivating realm of CodeRPG, an innovative educational web application designed to transform learning into an exhilarating adventure. Imagine embarking on a journey where you not only acquire coding skills but also forge your own unique character, advancing through levels that are as addictively engaging as they are instructive.
+
+      At CodeRPG, we recognize the power of combining education with enjoyment. By seamlessly weaving together games and interactive experiences, we've crafted a digital sanctuary where the thrill of coding becomes an irresistible addiction. Unveil the secrets of programming through engaging challenges and interactive activities that turn learning into a captivating odyssey.
+
+      Our mission at CodeRPG is to cultivate a dynamic environment that mirrors the allure of a fantasy realm. As you navigate this virtual world fueled by imagination, you'll not only enhance your skills but also witness your progress unfold before you. Much like tracking your progress in a role-playing game, you'll be able to monitor your growth and accomplishments, creating a sense of achievement that fuels your desire to explore further.
+
+      In essence, CodeRPG is your portal to a realm where education and excitement intertwine. Embark on a quest to master coding while immersing yourself in a universe of endless possibilities, all designed to make learning a truly enchanting and rewarding endeavor.
+      </p>
+
+    </div> 
+    <div class="card" style="width: 70rem;">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">About Contributing</h6>
+        <p class="card-text">Howdy, everyone! Mason Scarbro here, the ''mastermind'' pulling the strings behind CodeRPG. Just wanted to give you a sneak peek into the backstory I whipped up this whole thing during the summer, and it managed to find its way into my junior year of college. Life's a balancing act, you know? Between lectures, projects, and, well, life being life, there's a lot on my plate. Now, I'm no coding prodigy who's been at this for ages. I took my first coding plunge only about a year and a half back. So, why am I sharing my coding journey with you? 'Cause this spot isn't just for the coding gurus; it's for learners like you and me, all marching towards coding excellence. This is where you come in, fellow coding enthusiasts. Those links hanging around up there? They're your gateway to the CodeRPG universe. And that pull request button? It's your VIP pass, your opportunity to add your unique touch. Now, I won't make grand promises, but here's the deal: More games and lessons? Absolutely! And here's the thing – it's all thanks to the open-source vibe of CodeRPG. You see, while I won't be directly collaborating with each and every one of you, the door's wide open for you to contribute your own games or lessons through pull requests. We're piecing together this place, bit by bit, crafting a collective masterpiece. So, let's embrace the endless horizons that CodeRPG brings. Think of it like a treasure map, and the treasure is knowledge – the kind that propels you forward in the coding realm. Our journey is just beginning, and let me tell you, it's gonna be quite the adventure. So if you've got that coding itch and want to be part of the journey, let's make this place even more awesome, one code snippet at a time.</p>
+        <a href="https://github.com/MasonScarbro/CodeRPG-Site" class="card-link">CodeRPG Repo</a>
+        
+      </div> 
+  </div>
+  </div>
+</div>
 
   <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
     <!-- Grid container -->
@@ -122,7 +155,7 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2023 Copyright:
       <a class="text-white" href="https://github.com/MasonScarbro/CodeRPG-Site">Mason Scarbro</a>
-        , Build: 0.0.1
+      || Build: 0.0.1, 8/8/2023
     </div>
     <!-- Copyright -->
   </footer>
