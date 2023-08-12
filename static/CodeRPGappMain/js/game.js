@@ -343,6 +343,213 @@ const textNodes = [
             }
         ]
     },
+    {
+        id: 21,
+        text: 'As you continue your journey, you come across a mystical bridge guarded by a wise old sage. To cross, you must answer a question about time complexity. What is the time complexity of a linear search algorithm?',
+        options: [
+        {
+        text: 'O(1)',
+        nextText: 22,
+        },
+        {
+        text: 'O(log n)',
+        nextText: 23,
+        },
+        {
+        text: 'O(n)',
+        nextText: 24,
+        },
+        {
+        text: 'O(n^2)',
+        nextText: 25,
+        }
+        ]
+        },
+        {
+        id: 22,
+        text: 'The sage nods approvingly as you correctly identify the time complexity of constant time. The bridge glows, allowing you to pass as you gain insights into the efficiency of algorithms.',
+        options: [
+        {
+        text: 'Continue your adventure',
+        nextText: 26,
+        }
+        ]
+        },
+        {
+        id: 23,
+        text: 'The sage gently corrects you, explaining that a linear search has a time complexity of O(n), not O(log n). He imparts the wisdom of algorithmic complexity and encourages you to remember this lesson.',
+        options: [
+        {
+        text: 'Continue your journey',
+        nextText: 26,
+        }
+        ]
+        },
+        {
+        id: 24,
+        text: "The sage smiles as you correctly identify the time complexity of a linear search algorithm. The bridge's enchantment reacts to your knowledge, allowing you to cross and providing you with deeper insights into algorithm behavior.",
+        options: [
+        {
+        text: 'Press on',
+        nextText: 26,
+        }
+        ]
+        },
+        {
+        id: 25,
+        text: 'The sage shakes his head gently, informing you that a linear search algorithm does not have a time complexity of O(n^2), but rather O(n). He imparts the importance of understanding algorithmic analysis and its impact on performance.',
+        options: [
+        {
+        text: 'Continue your adventure',
+        nextText: 26,
+        }
+        ]
+        },
+        {
+        id: 26,
+        text: 'Your path leads you to a mystical fountain, said to grant insights into data organization. A water nymph appears and challenges you to arrange a set of numbers in ascending order using the bubble sort algorithm. Can you accomplish this task?',
+        options: [
+        {
+        text: 'Of course, I accept!',
+        nextText: 27,
+        },
+        {
+        text: "I'm unsure of the approach.",
+        nextText: 28,
+        }
+        ]
+        },
+        {
+        id: 27,
+        text: 'With determination, you apply the bubble sort algorithm and arrange the numbers correctly. The water nymph applauds your effort and reveals the significance of sorting algorithms in real-world applications.',
+        options: [
+        {
+        text: 'Continue your journey',
+        nextText: 29,
+        }
+        ]
+        },
+        {
+        id: 28,
+        text: 'The water nymph patiently guides you through the steps of the bubble sort algorithm, helping you arrange the numbers in ascending order. She emphasizes the importance of learning sorting techniques for efficient data manipulation.',
+        options: [
+        {
+        text: 'Press on',
+        nextText: 29,
+        }
+        ]
+        },
+        {
+        id: 29,
+        text: 'As you venture further, you stumble upon an ancient code chamber. Within, you encounter a mystical tablet inscribed with a recursive algorithm. Can you decipher its message and write the code?',
+        options: [
+        {
+        text: "I'm ready to unravel the mystery!",
+        nextText: 30,
+        },
+        {
+        text: 'Recursive algorithms still confuse me.',
+        nextText: 31,
+        }
+        ]
+        },
+        {
+        id: 30,
+        text: 'With focus and determination, you decipher the recursive algorithm and successfully transcribe the code. The chamber resonates with approval, and you grasp the power of recursion in problem-solving.',
+        options: [
+        {
+        text: 'Continue your adventure',
+        nextText: 32,
+        }
+        ]
+        },
+        {
+        id: 31,
+        text: 'The ancient code chamber provides you with guidance, helping you understand the principles of recursion and how to implement the recursive algorithm. You emerge with newfound confidence in tackling complex problems.',
+        options: [
+        {
+        text: 'Press on',
+        nextText: 32,
+        }
+        ]
+        },
+        {
+        id: 32,
+        text: "Your journey takes you to the heart of a digital labyrinth guarded by a virtual sentinel. The sentinel challenges you with a question about binary search trees. What is the property that ensures a binary search tree's left child is smaller and its right child is larger?",
+        options: [
+        {
+        text: 'Max-Heap property',
+        nextText: 33,
+        },
+        {
+        text: 'Balanced property',
+        nextText: 34,
+        },
+        {
+        text: 'Binary property',
+        nextText: 35,
+        },
+        {
+        text: 'BST property',
+        nextText: 36,
+        }
+        ]
+        },
+        {
+        id: 33,
+        text: "The virtual sentinel kindly corrects you, explaining that the property ensuring a binary search tree's left child is smaller and its right child is larger is called the ''BST property.'' He shares insights into binary tree structures and their applications.",
+        options: [
+        {
+        text: 'Continue your journey',
+        nextText: 37,
+        }
+        ]
+        },
+        {
+        id: 34,
+        text: "With a knowing smile, the virtual sentinel commends your understanding of balanced binary search trees. The labyrinth's path clears, granting you passage as you gain a deeper appreciation for efficient data storage.",
+        options: [
+        {
+        text: 'Press on',
+        nextText: 37,
+        }
+        ]
+        },
+        {
+        id: 35,
+        text: "The virtual sentinel gently guides you, explaining that the property you're thinking of is the ''BST property.'' He imparts the importance of accurate terminology and understanding the foundational concepts of data structures.",
+        options: [
+        {
+        text: 'Continue your adventure',
+        nextText: 37,
+        }
+        ]
+        },
+        {
+        id: 36,
+        text: 'With a nod of approval, the virtual sentinel acknowledges your knowledge of the binary search tree property. The labyrinth opens up, allowing you to proceed and granting you insights into the versatility of binary trees.',
+        options: [
+        {
+        text: 'Continue your journey',
+        nextText: 37,
+        }
+        ]
+        },
+        {
+        id: 37,
+        text: 'As you traverse the digital labyrinth, you encounter a sentient firewall that guards the path ahead. The firewall challenges you to debug a piece of code that has fallen into an infinite loop. Can you break the cycle?',
+        options: [
+        {
+        text: "I'll troubleshoot the code!",
+        nextText: 38,
+        },
+        {
+        text: 'Debugging is not my strength.',
+        nextText: 39,
+        }
+        ]
+        },
+    
     
 
 
