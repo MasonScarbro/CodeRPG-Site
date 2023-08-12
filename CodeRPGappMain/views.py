@@ -84,6 +84,9 @@ class ShowProfilePageView(generic.DetailView):
         context['username'] = user.username
         context['first_name'] = user.first_name
         context['last_name'] = user.last_name
+
+        profile = self.get_object()
+        context['level'] = profile.level
         return context
 
 def home(request):
