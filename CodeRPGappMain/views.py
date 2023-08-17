@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import generic 
 from django.views.generic import DetailView
@@ -8,9 +9,11 @@ from .forms import SignUpForm, EditProfileForm, PasswordChangingForm
 from .models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+#Request handler
 """ 
 NOT WORKING!
 
@@ -92,5 +95,22 @@ class ShowProfilePageView(generic.DetailView):
 def home(request):
     return render(request, 'home/home.html')
 
+    
+
 def game(request):
-    return render(request, 'games/game.html')
+    profile = Profile.objects.get(user=request.user) #profile object
+    level = profile.level #level context from the profile
+    return render(request, 'games/game.html', {'level': level})
+
+
+#handles the level updating for ajax calls
+@login_required
+def update_level(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user=request.user) #profile object
+        level = profile.level + 1 #level context from the profile
+        profile.level = level
+        profile.save()
+
+        response_data = {'level': level}
+        return JsonResponse(response_data)

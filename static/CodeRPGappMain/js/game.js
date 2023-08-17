@@ -1,9 +1,53 @@
 const textElement = document.getElementById('text');
 
 const optionButtonsElement = document.getElementById('option-buttons');
+const csrftoken = Cookies.get('csrftoken');
+const markComplete = document.getElementById('markComplete');
+const data = document.currentScript.dataset;
+const level = parseInt(data.level);
+
+//on click send a post request to the update level function, handles leveling up the current user
+$('#markComplete').on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'update-level',
+        headers: {'X-CSRFToken': csrftoken},
+        data: {'level': level},
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(error) {
+            console.log(error)
+            // Handle errors here
+        }
+    });
+});
+
+
+
 
 let state = {};
 
+
+
+
+
+/*
+fetch(url, {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      "X-CSRFToken": getCookie("csrftoken"),
+    },
+    body: JSON.stringify({payload: "data to send"})
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
+*/
 
 function startGame() {
     state = {}
@@ -554,5 +598,6 @@ const textNodes = [
 
 
 ]
+
 
 startGame();

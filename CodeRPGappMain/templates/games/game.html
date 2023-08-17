@@ -3,7 +3,10 @@
 {% csrf_token %}
 {% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
 <link href="/static/CodeRPGappMain/css/gameStyle.css" rel="stylesheet">
-<script defer src="{% static 'CodeRPGappMain/js/game.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer src="{% static 'CodeRPGappMain/js/game.js' %}" data-level="{{ level }}"></script>
+
 <div class="back-button-cont">
     <a href="/" class="btn btn-primary">Back/Home</a>
 </div> 
@@ -21,6 +24,10 @@
 
 <div class="back-button-cont">
     <a href="{% url 'show_profile' %}" class="btn btn-primary">Character</a>
+</div>
+
+<div class="back-button-cont">
+    <button id="markComplete">Mark As Complete</button>
 </div> 
 {% endif %}
 {% endblock %}
