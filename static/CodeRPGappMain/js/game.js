@@ -3,8 +3,13 @@ const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('option-buttons');
 const csrftoken = Cookies.get('csrftoken');
 const markComplete = document.getElementById('markComplete');
+
 const data = document.currentScript.dataset;
-const level = parseInt(data.level);
+const level_unP = data.level;
+const markComplete_1 = parseInt(data.markcomplete_1, 10);
+console.log(markComplete_1);
+level =  parseInt(level_unP);
+console.log(level);
 
 //on click send a post request to the update level function, handles leveling up the current user
 $('#markComplete').on('click', function(e){
@@ -21,33 +26,48 @@ $('#markComplete').on('click', function(e){
             console.log(error)
             // Handle errors here
         }
+    
     });
+    setTimeout(() => {
+
+        $.ajax({
+            type: 'POST',
+            url: 'update_MarkComplete_Game',
+            headers: {'X-CSRFToken': csrftoken},
+            data: {'markComplete_1': markComplete_1},
+            success: function(response) {
+                console.log(response)
+            },
+            error: function(error) {
+                console.log(error)
+                // Handle errors here
+            }
+        
+        });
+
+    }, '500');
+
+    
+
 });
+
+
+// NOT WORKING
+
+
+
+if (markComplete_1 >= 1) {
+    // console.log(markComplete_1) - TESTING
+    markComplete.setAttribute('disabled', 'disabled');
+}
+
+//console.log(markComplete_1) - TESTING
 
 
 
 
 let state = {};
 
-
-
-
-
-/*
-fetch(url, {
-    method: "POST",
-    credentials: "same-origin",
-    headers: {
-      "X-Requested-With": "XMLHttpRequest",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-    body: JSON.stringify({payload: "data to send"})
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
-*/
 
 function startGame() {
     state = {}

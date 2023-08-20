@@ -5,7 +5,8 @@
 <link href="/static/CodeRPGappMain/css/gameStyle.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer src="{% static 'CodeRPGappMain/js/game.js' %}" data-level="{{ level }}"></script>
+<script defer src="{% static 'CodeRPGappMain/js/game.js' %}" data-level="{{ level }}" data-markComplete_1 = "{{ markComplete_1 }}"></script>
+
 
 <div class="back-button-cont">
     <a href="/" class="btn btn-primary">Back/Home</a>

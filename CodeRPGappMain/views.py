@@ -14,23 +14,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 #Request handler
-""" 
-NOT WORKING!
-
-class ShowProfilePageView(LoginRequiredMixin, DetailView):
-    model = Profile
-    template_name = 'registration/user_profile.html'
-
-    def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
-        context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-
-        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-
-        context["page_user"] = page_user
-        return context
-
- """
 
 class UserRegisterView(generic.CreateView):
     form_class = SignUpForm #Imported from forms
@@ -100,8 +83,31 @@ def home(request):
 def game(request):
     profile = Profile.objects.get(user=request.user) #profile object
     level = profile.level #level context from the profile
-    return render(request, 'games/game.html', {'level': level})
+    markComplete_1 = profile.markComplete_1
+    return render(request, 'games/game.html', {'level': level, 'markComplete_1' : markComplete_1})
 
+'''
+#FOR THE MARK COMPLETE MODELS
+mark_complete_model_by_name = {
+    model.__class__.__name__: model
+    for model in [
+        Foo,
+        Bar,
+    ]
+}
+def mark_complete(request, model_name, pk):
+    mark_complete_model_by_name[model_name].objects.filter(pk=pk, user=request.user).update(complete=True)
+    return HttpResponse('ok')
+'''
+def update_MarkComplete_Game(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user=request.user) #profile object
+        markComplete_1 = profile.markComplete_1 + 1; #level context from the profile
+        profile.markComplete_1 = markComplete_1
+        profile.save()
+
+        response_data = {'markComplete_1': markComplete_1}
+        return JsonResponse(response_data)
 
 #handles the level updating for ajax calls
 @login_required
@@ -114,3 +120,6 @@ def update_level(request):
 
         response_data = {'level': level}
         return JsonResponse(response_data)
+    
+
+       
