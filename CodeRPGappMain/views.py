@@ -102,7 +102,7 @@ def mark_complete(request, model_name, pk):
 def update_MarkComplete_Game(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user=request.user) #profile object
-        markComplete_1 = profile.markComplete_1 + 1; #level context from the profile
+        markComplete_1 = True; #level context from the profile
         profile.markComplete_1 = markComplete_1
         profile.save()
 

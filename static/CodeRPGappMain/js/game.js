@@ -6,8 +6,8 @@ const markComplete = document.getElementById('markComplete');
 
 const data = document.currentScript.dataset;
 const level_unP = data.level;
-const markComplete_1 = parseInt(data.markcomplete_1, 10);
-console.log(markComplete_1);
+const markComplete_1 = data.markcomplete_1;
+console.log(typeof markComplete_1);
 level =  parseInt(level_unP);
 console.log(level);
 
@@ -36,6 +36,10 @@ $('#markComplete').on('click', function(e){
             headers: {'X-CSRFToken': csrftoken},
             data: {'markComplete_1': markComplete_1},
             success: function(response) {
+                if (markComplete_1.response) {
+                    // console.log(markComplete_1) - TESTING
+                    markComplete.setAttribute('disabled', 'disabled');
+                }
                 console.log(response)
             },
             error: function(error) {
@@ -51,15 +55,14 @@ $('#markComplete').on('click', function(e){
 
 });
 
-
-// NOT WORKING
-
-
-
-if (markComplete_1 >= 1) {
+if (markComplete_1 == 'True') {
     // console.log(markComplete_1) - TESTING
     markComplete.setAttribute('disabled', 'disabled');
 }
+
+
+
+
 
 //console.log(markComplete_1) - TESTING
 
