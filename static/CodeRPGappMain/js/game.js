@@ -7,7 +7,7 @@ const markComplete = document.getElementById('markComplete');
 const data = document.currentScript.dataset;
 const level_unP = data.level;
 const markComplete_1 = data.markcomplete_1;
-console.log(typeof markComplete_1);
+// console.log(typeof markComplete_1); TESTING, Since Bools are upper in Python this is a string so we can cast it to a bool or just check it as a string (what I did) 
 level =  parseInt(level_unP);
 console.log(level);
 
@@ -64,7 +64,6 @@ if (markComplete_1 == 'True') {
 
 
 
-//console.log(markComplete_1) - TESTING
 
 
 

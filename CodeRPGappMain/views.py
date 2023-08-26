@@ -78,7 +78,8 @@ class ShowProfilePageView(generic.DetailView):
 def home(request):
     return render(request, 'home/home.html')
 
-    
+def gamesHome(request):
+    return render(request, 'games/gamesHome.php')
 
 def game(request):
     profile = Profile.objects.get(user=request.user) #profile object
