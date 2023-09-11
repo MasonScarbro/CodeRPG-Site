@@ -17,6 +17,15 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
             {% if page_user.level %}
             <h6 class="card-subtitle mb-3 text-muted">Level: {{ page_user.level }}</h6>
             {% endif %}
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Skills</h5>
+                {% for skill in skills.all %}
+                <li>{{ skill.name }}</li>
+                {% endfor %}
+              </div>
+            </div>
+            
             <a href="/" class="btn btn-primary">Back</a>
         </div>
     </div>

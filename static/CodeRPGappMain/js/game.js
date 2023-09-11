@@ -14,6 +14,7 @@ console.log(level);
 //on click send a post request to the update level function, handles leveling up the current user
 $('#markComplete').on('click', function(e){
     e.preventDefault();
+    markComplete.setAttribute('disabled', 'disabled');
     $.ajax({
         type: 'POST',
         url: 'update-level',

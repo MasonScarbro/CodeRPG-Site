@@ -72,6 +72,7 @@ class ShowProfilePageView(generic.DetailView):
         context['last_name'] = user.last_name
 
         profile = self.get_object()
+        context['skills'] = profile.skills
         context['level'] = profile.level
         return context
 
@@ -105,8 +106,8 @@ def update_MarkComplete_Game(request):
         profile = Profile.objects.get(user=request.user) #profile object
         markComplete_1 = True; #level context from the profile
         profile.markComplete_1 = markComplete_1
+        profile.add_skill('The Basics')
         profile.save()
-
         response_data = {'markComplete_1': markComplete_1}
         return JsonResponse(response_data)
 
