@@ -13,14 +13,14 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #020330;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Code-RPG</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Code-RPG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a> <!-- User can Edit Profile -->
@@ -37,6 +37,10 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
         <li class="nav-item">
             <a class="nav-link" href="{% url 'gamesHome' %}">Games</a> <!-- url pointing to the Login view -->
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'lessons' %}">Lessons</a> <!-- url pointing to the Login view -->
+      </li>
         </form>
       </div>
     </div>
@@ -48,14 +52,14 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #020330;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Code-RPG</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Code-RPG</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- User can Edit Profile -->
@@ -88,7 +92,7 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
       </p>
 
     </div> 
-    <div class="card" style="width: 70rem;">
+    
       <div class="card-body">
         <h5 class="card-title"></h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">About Contributing</h6>
@@ -106,7 +110,7 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
         <a href="https://github.com/MasonScarbro/CodeRPG-Site" class="card-link">CodeRPG Repo</a>
         
       </div> 
-  </div>
+  
 
 
   </div>

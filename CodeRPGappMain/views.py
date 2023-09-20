@@ -82,6 +82,9 @@ def home(request):
 def gamesHome(request):
     return render(request, 'games/gamesHome.php')
 
+def lessons(request):
+    return render(request, 'lessons/lessons.html')
+
 def game(request):
     profile = Profile.objects.get(user=request.user) #profile object
     level = profile.level #level context from the profile

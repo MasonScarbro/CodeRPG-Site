@@ -1,12 +1,8 @@
-{% block content %}
+{% extends 'base.html' %}
 {% load static %}
 {% csrf_token %}
 {% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
-<link 
-rel="stylesheet"
-type="text/css"
-href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
-/>
+{%  block content %}
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-lg-4">
@@ -44,20 +40,6 @@ href="{% static 'CodeRPGappMain/css/bootstrap.css' %}"
 
   </div>
 </div>
-
-<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
-    <!-- Grid container -->
-    <div class="container p-4"></div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 Copyright:
-      <a class="text-white" href="https://github.com/MasonScarbro/CodeRPG-Site">Mason Scarbro</a>
-      || Build: 0.0.1, 8/8/2023
-    </div>
-    <!-- Copyright -->
-  </footer>
-
-{% endif %}
 {% endblock %}
+{% endif %}
+

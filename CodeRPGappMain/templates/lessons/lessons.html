@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% csrf_token %}
+{% if user.is_authenticated %} <!--If the user is logged in or in other words ''authenticated''-->
+{%  block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <div class="card" style="width: 20rem; margin-top: 20px;" >
+        <img src="{% static 'CodeRPGappMain/images/Code-RPG.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Basics</h5>
+          <p class="card-text">Want to Learn the Basics of JS and some web development! You've come to the right place, This lesson will provide videos, outside resources, excersises, and projects!</p>
+          <a href="#" class="btn btn-primary">To The Lesson!</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}
+{% endif %}
