@@ -15,4 +15,5 @@ Built using:
   Heres how to  contribute 
   <li>1st you need to fork and clone the project, Or If you really know what your doing you can just fork it create your changes directly on github, If you do it that way you dont have to deal with the install stuff </li>
   <li>2nd *Only Applies if cloned* You need to have Django and Bootstrap installed, you can download the bootStrap-5 files and place them in the js and css files location of the project</li>
-  <li>3rd You can use the game.js as a reference as to how a game might look and or how you would communicate with the backend in order to update the level and make the button </li>
+  <li>3rd You can use the game.js as a reference as to how a game might look and or how you would communicate with the backend in order to update the level and make the button unclickable for the user * if you dont understand the ajax make a PR anyway with game logic in JS and CSS/HTML and I will see if I can do the backend part for you *</li>
+  <li>Lastly Star The repo!</li> :star2:
