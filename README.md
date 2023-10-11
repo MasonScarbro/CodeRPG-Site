@@ -1,19 +1,33 @@
-# CodeRPG
-A Hackathon Project built to help people with ADHD and Autism chat, connect and learn code in a fun way
-Built using:
-<br></br>
-<a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a>
-    <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="40" height="40">
-  </a>
+# Code-RPG
 
-  <br></br>
-<h5>For HacktoberFest<h5>
-<p>Hello All, If you Like webBased Educational games 
-  and are a web developer then please feel free to contribute to this project</p>
-  <br> :sparkles: :sparkles: :sparkles: </br>
-  <p> There Are no Rules for what you can request however check out the issues if you want an Idea <p>
-  Heres how to  contribute: 
-  <li>1st you need to fork and clone the project, Or If you really know what your doing you can just fork it create your changes directly on github, If you do it that way you dont have to deal with the install stuff </li>
-  <li>2nd *Only Applies if cloned* You need to have Django and Bootstrap installed, you can download the bootStrap-5 files and place them in the js and css files location of the project</li>
-  <li>3rd You can use the game.js as a reference as to how a game might look and or how you would communicate with the backend in order to update the level and make the button unclickable for the user * if you dont understand the ajax make a PR anyway with game logic in JS and CSS/HTML and I will see if I can do the backend part for you *</li>
-  <li>Lastly Star The repo! :star2: </li> 
+Code RPG is my own personal website built with lessons and tutorials that is centered around helping people with ADHD like myself!
+
+## Deployment
+
+To Deploy you need to have forked the repo and installed the requirments
+
+```bash
+    pip intall requirments.txt
+```
+
+```bash
+    cd CodeRPG-Site
+```
+```bash
+    python manage.py runserver
+```
+
+## Tech Stack
+
+**Client:** 
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![BootStrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+**Server:** ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
