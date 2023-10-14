@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('gamesHome', gamesHome, name='gamesHome'),
-    path('CodeRPGappMain/', include('django.contrib.auth.urls')),
+    path('CodeRPGappMain/', include('django.contrib.auth.urls')),#notice the contrib.auth
     path('CodeRPGappMain/', include('CodeRPGappMain.urls')),
     
 
